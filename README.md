@@ -10,7 +10,7 @@ GARL is a  novel MADRL model, which consists of a multi-center attention-based g
 1. Clone repo
     ```bash
     git clone https://github.com/BIT-MCS/Air-Ground-SC-with-UAV-Carriers.git
-    cd Air_Ground_SC
+    cd Air-Ground-SC-with-UAV-Carriers
     ```
 2. Install dependent packages
     ```
