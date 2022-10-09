@@ -9,7 +9,7 @@ GARL is a  novel MADRL model, which consists of a multi-center attention-based g
 ### Installation
 1. Clone repo
     ```bash
-    git clone https://github.com/BIT-MCS/Air-Ground-SC-with-UAV-Carriers.git
+    git clone https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers.git
     cd Air-Ground-SC-with-UAV-Carriers
     ```
 2. Install dependent packages
@@ -28,79 +28,55 @@ Then the usage information will be shown as following
 usage: main.py [-h] env_name method_name mode
 
 positional arguments:
-  env_name     the name of environment (KAIST or NCSU)
-  method_name  the name of method (fd_mappo_cubicmap)
+  env_name     the name of environment (KAIST or UCLA)
+  method_name  the name of method (GARL)
   mode         train or test
  
 optional arguments:
   -h, --help   show this help message and exit
 ```
-Test the trained models provided in [human_drone_SC/log](https://github.com/BIT-MCS/human_drone_SC/tree/main/log).
+Test the trained models provided in [Air-Ground-SC-with-UAV-Carriers/log](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/log).
 ```
-python main.py KAIST fd_mappo_cubicmap test
-python main.py NCSU fd_mappo_cubicmap test
+python main.py KAIST GARL test
+python main.py UCLA GARL test
 ```
 ## :computer: Training
 
-We provide complete training codes for FD-MAPPO (Cubic Map).<br>
+We provide complete training codes for GARL.<br>
 You could adapt it to your own needs.
 
-1. If you don't have NVIDIA RTX 3090, you should comment these two lines in file
-[human_drone_SC/code/util.py](https://github.com/BIT-MCS/human_drone_SC/tree/main/code/util.py).
+1. If you don't have NVIDIA RTX A6000, you should comment these two lines in file
+[Air-Ground-SC-with-UAV-Carriers/code/util.py](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/code/util.py).
 	```
 	[24]  torch.backends.cuda.matmul.allow_tf32 = False
 	[25]  torch.backends.cudnn.allow_tf32 = False
 	```
 2. You can modify the config files 
-[human_drone_SC/code/environment/KAIST/conf.py](https://github.com/BIT-MCS/human_drone_SC/tree/main/code/environment/KAIST/conf.py) and
-[human_drone_SC/code/environment/NCSU/conf.py](https://github.com/BIT-MCS/human_drone_SC/tree/main/code/environment/NCSU/conf.py) for environments.<br>
-For example, you can control the number of drones in the environment by modifying this line
+[Air-Ground-SC-with-UAV-Carriers/code/env/KAIST/conf.py](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/code/env/KAIST/conf.py) and
+[Air-Ground-SC-with-UAV-Carriers/code/env/UCLA/conf.py](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/code/env/UCLA/conf.py) for environments.<br>
+For example, you can control the number of UGVs in the environment by modifying this line
 	```
-	[43]  'uav_num': 6,
+	[13]  'UGV_UAVs_Group_num': 4,
 	```
 3. You can modify the config file 
-[human_drone_SC/code/method/fd_mappo_cubicmap/conf.py](https://github.com/BIT-MCS/human_drone_SC/tree/main/code/method/fd_mappo_cubicmap/conf.py) for method.<br>
+[Air-Ground-SC-with-UAV-Carriers/code/method/GARL/conf.py](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/code/method/GARL/conf.py) for method.<br>
 For example, you can control the hyperparameters studied in paper by modifying these two lines
 	```
-	[34]  'M_size': [16, 16, 16],  # Z, X, Y
-	[35]  'mtx_size': 3,  # X' (Y')
+	[55]  'GNN_layer_num': 3,
+	[57]  'Comm_layer_num': 3,
 	```
 4. Training
 	```
-	python main.py KAIST fd_mappo_cubicmap train
-	python main.py NCSU fd_mappo_cubicmap train
+	python main.py KAIST GARL train
+	python main.py UCLA GARL train
 	```
-	The log files will be stored in [human_drone_SC/log](https://github.com/BIT-MCS/human_drone_SC/tree/main/log).
+	The log files will be stored in [Air-Ground-SC-with-UAV-Carriers/log](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/log).
 ## :checkered_flag: Testing
-1. Before testing, you should modify the file [human_drone_SC/code/env_method_set.py](https://github.com/BIT-MCS/human_drone_SC/tree/main/code/env_method_set.py) to ensure the datetime of the version you want to test is right.
+1. Testing
 	```
-	[2]  'KAIST/fd_mappo_cubicmap': '2021-05-27/23-48-01',
-	[3]  'NCSU/fd_mappo_cubicmap': '2021-05-20/16-56-41',
+	python main.py KAIST GARL test
+	python main.py UCLA GARL test
 	```
-2. Testing
-	```
-	python main.py KAIST fd_mappo_cubicmap test
-	python main.py NCSU fd_mappo_cubicmap test
-	```
-## :scroll: Acknowledgement
-
-This work is supported by the National Natural Science Foundation of China (No. 62022017). 
-<br>
-Corresponding author: Chi Harold Liu.
-
 ## :e-mail: Contact
 
 If you have any question, please email `2656886245@qq.com`.
-## Paper
-If you are interested in our work, please cite our paper as
-
-```
-@INPROCEEDINGS{wang2022fdmappo_cubicmap,
-  title={Human-Drone Collaborative Spatial Crowdsourcing by Memory-Augmented Distributed Multi-Agent Deep Reinforcement Learning}, 
-  author={Wang, Yu and Liu, Chi Harold and Piao, Chengzhe and Yuan, Ye and Han, Rui and Wang, Guoren and Tang, Jian},
-  booktitle={2022 IEEE 38th International Conference on Data Engineering (ICDE)}, 
-  year={2022},
-  pages={459--471},
-  organization={IEEE}
-}
-```
