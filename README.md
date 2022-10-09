@@ -51,21 +51,7 @@ You could adapt it to your own needs.
 	[24]  torch.backends.cuda.matmul.allow_tf32 = False
 	[25]  torch.backends.cudnn.allow_tf32 = False
 	```
-2. You can modify the config files 
-[Air-Ground-SC-with-UAV-Carriers/code/env/KAIST/conf.py](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/code/env/KAIST/conf.py) and
-[Air-Ground-SC-with-UAV-Carriers/code/env/UCLA/conf.py](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/code/env/UCLA/conf.py) for environments.<br>
-For example, you can control the number of UGVs in the environment by modifying this line
-	```
-	[13]  'UGV_UAVs_Group_num': 4,
-	```
-3. You can modify the config file 
-[Air-Ground-SC-with-UAV-Carriers/code/method/GARL/conf.py](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/code/method/GARL/conf.py) for method.<br>
-For example, you can control the hyperparameters studied in paper by modifying these two lines
-	```
-	[55]  'GNN_layer_num': 3,
-	[57]  'Comm_layer_num': 3,
-	```
-4. Training
+2. Training
 	```
 	python main.py KAIST GARL train
 	python main.py UCLA GARL train
