@@ -1,17 +1,16 @@
 # GARL
-This work "Human-Drone Collaborative Spatial Crowdsourcing by Memory-Augmented 
-Distributed Multi-Agent Deep Reinforcement Learning" has been published in ICDE 2022.
+This work "Air-Ground Spatial Crowdsourcing with UAV Carriers by Geometric Graph Convolutional Multi-Agent Deep Reinforcement Learning" has been submitted in ICDE 2023.
 ## :page_facing_up: Description
-FD-MAPPO (Cubic Map) is a novel deep reinforcement learning (DRL) framework for human-drone collaborative SC tasks. It consists of a fully decentralized MADRL framework, called FD-MAPPO, as a novel multi-actor-multi-learner architecture without any centralized control module based on PPO. It also contains a novel memory structure, called Cubic Map, to enable novel sparse cubic writing and contextual attentive reading operations.
+GARL is a  novel MADRL model, which consists of a multi-center attention-based graph convolutional network (GCN) to accurately extract UGV specific features from UGV stop network called "MC-GCN", and a novel GNN-based communication mechanism called "E-Comm" to make the cooperation among UGVs adaptive to constant changing of geometric shapes formed by UGVs.
 ## :wrench: Dependencies
 - Python == 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html))
 - [PyTorch == 1.8.1](https://pytorch.org/)
-- NVIDIA GPU (RTX 3090) + [CUDA 11.1](https://developer.nvidia.com/cuda-downloads)
+- NVIDIA GPU (RTX A6000) + [CUDA 11.1](https://developer.nvidia.com/cuda-downloads)
 ### Installation
 1. Clone repo
     ```bash
-    git clone https://github.com/BIT-MCS/human_drone_SC.git
-    cd human_drone_SC
+    git clone https://github.com/BIT-MCS/Air-Ground-SC-with-UAV-Carriers.git
+    cd Air_Ground_SC
     ```
 2. Install dependent packages
     ```
