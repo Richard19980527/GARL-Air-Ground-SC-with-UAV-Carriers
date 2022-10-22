@@ -2,7 +2,7 @@ from util import *
 
 METHOD_CONF = {
     'method_name': __file__.split('/')[-2],
-    'gpu_id': 1,
+    'gpu_id': 0,
     'seed': 1,
     'env_num': 1,
     # ---------algo------------
