@@ -46,7 +46,7 @@ We provide complete training codes for GARL.<br>
 You could adapt it to your own needs.
 
 1. If you don't have NVIDIA RTX A6000, you should comment these two lines in file
-[GARL-Air-Ground-SC-with-UAV-Carriers/code/util.py](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/code/util.py).
+[GARL-Air-Ground-SC-with-UAV-Carriers/code/util.py](https://github.com/Richard19980527/GARL-Air-Ground-SC-with-UAV-Carriers/tree/main/code/util.py).
 	```
 	[21]  torch.backends.cuda.matmul.allow_tf32 = False
 	[22]  torch.backends.cudnn.allow_tf32 = False
@@ -56,7 +56,7 @@ You could adapt it to your own needs.
 	python main.py KAIST GARL train
 	python main.py UCLA GARL train
 	```
-	The log files will be stored in [GARL-Air-Ground-SC-with-UAV-Carriers/log](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/log).
+	The log files will be stored in [GARL-Air-Ground-SC-with-UAV-Carriers/log](https://github.com/Richard19980527/GARL-Air-Ground-SC-with-UAV-Carriers/tree/main/log).
 ## :checkered_flag: Testing
 1. Testing
 	```
