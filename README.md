@@ -48,8 +48,8 @@ You could adapt it to your own needs.
 1. If you don't have NVIDIA RTX A6000, you should comment these two lines in file
 [Air-Ground-SC-with-UAV-Carriers/code/util.py](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/code/util.py).
 	```
-	[24]  torch.backends.cuda.matmul.allow_tf32 = False
-	[25]  torch.backends.cudnn.allow_tf32 = False
+	[21]  torch.backends.cuda.matmul.allow_tf32 = False
+	[22]  torch.backends.cudnn.allow_tf32 = False
 	```
 2. Training
 	```
