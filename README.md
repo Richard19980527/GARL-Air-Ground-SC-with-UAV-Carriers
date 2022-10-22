@@ -35,7 +35,7 @@ positional arguments:
 optional arguments:
   -h, --help   show this help message and exit
 ```
-Test the trained models provided in [GARL-Air-Ground-SC-with-UAV-Carriers/log](https://github.com/Richard19980527/Air-Ground-SC-with-UAV-Carriers/tree/main/log).
+Test the trained models provided in [GARL-Air-Ground-SC-with-UAV-Carriers/log](https://github.com/Richard19980527/GARL-Air-Ground-SC-with-UAV-Carriers/tree/main/log).
 ```
 python main.py KAIST GARL test
 python main.py UCLA GARL test
