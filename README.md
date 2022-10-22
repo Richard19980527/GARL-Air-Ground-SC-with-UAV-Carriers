@@ -25,10 +25,10 @@ python main.py -h
 ```
 Then the usage information will be shown as following
 ```
-usage: main.py [-h] env_name method_name mode
+usage: main.py [-h] dataset_name method_name mode
 
 positional arguments:
-  env_name     the name of environment (KAIST or UCLA)
+  dataset_name     the name of dataset (KAIST or UCLA)
   method_name  the name of method (GARL)
   mode         train or test
  
