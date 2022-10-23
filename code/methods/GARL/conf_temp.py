@@ -20,7 +20,7 @@ METHOD_CONF = {
     'mini_batch_size': 400,
     'buffer_replay_time': 2,
     # ----------train test-----------
-    'train_iter': int(1e5),
+    'train_iter': int(1e4),
     'continue_train_start_iter_id': 0,
     'test_num': 50,
     # ----------lr decay-----------
