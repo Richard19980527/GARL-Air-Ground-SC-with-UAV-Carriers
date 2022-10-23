@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     dataset_conf = importlib.import_module('datasets.' + args.dataset_name + '.conf_temp').DATASET_CONF
     env_conf = importlib.import_module('env.conf_temp').ENV_CONF
-    method_conf = importlib.import_module('methods.' + args.method_name + '.conf_temp').METHOD_CONF
+    method_conf = importlib.import_module('methods.' + args.method_name + '.conf_temp_' + args.dataset_name).METHOD_CONF
     log_conf = importlib.import_module('log.conf_temp').LOG_CONF
 
     log_conf['dataset_name'] = args.dataset_name
