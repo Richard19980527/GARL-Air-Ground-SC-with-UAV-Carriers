@@ -4,7 +4,7 @@ METHOD_CONF = {
     'method_name': __file__.split('/')[-2],
     'gpu_id': 0,
     'seed': 2,
-    'env_num': 1,
+    'env_num': 2,
     # ---------algo------------
     'lr': 2.5e-4,
     'eps': 1e-5,
